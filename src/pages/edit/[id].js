@@ -1,3 +1,3 @@
-import TaskForm from "../../components/TaskForm";
+import newTaskForm from "../new";
 
-export default TaskForm;
+export default newTaskForm;
