@@ -8,9 +8,11 @@ export default function Home() {
   const {tasks} = useTasks();
  
   return (
+
     <Container>
+      <TaskForm /> 
       <ShowTasks />
-      <TaskForm />
     </Container>
+
   );
 }

@@ -5,13 +5,17 @@ export const TaskContext = createContext();
 export const useTasks = () => useContext(TaskContext);
 
 export const TaskProvider = ({children}) => {
-    const [tasks, setTasks] = useState([{}]);
+    const [tasks, setTasks] = useState([{
+        title: "My first task",
+        description: "This is my first task",
+        id: 1
+    }]);
 
     const createTask = ({title,  description}) => {
         setTasks([...tasks, {
             title, 
             description, 
-            id: `${tasks.length}`}
+            id: `${tasks.length + 1}`}
         ]);
     };
 

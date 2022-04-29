@@ -33,25 +33,35 @@ const TaskForm = () => {
     if (query.id) {
       const taskFound = tasks.find((task) => task.id === query.id);
       if (taskFound)
-        setTask({ title: taskFound.title, description: taskFound.description });
+        setTask({description: taskFound.description});
     }
   }, [query.id]);
 
   return (
     <div >
-    <div  className="flex-grow text-right px-28 py-5">
+    <div>
       <form onSubmit={handleSubmit}>
-        <h5>New Todo</h5>
+        <h3>{query.id ? "Edit Task" : "New Task"}</h3>
+        <input
+          type="text"
+          name="title"
+          placeholder="Write a task"
+          onChange={handleChange}
+          value={task.title}
+          autoFocus
+        />
         <input
           type="text"
           name="description"
           placeholder="Write a task"
-          className="form-control"
           onChange={handleChange}
           value={task.description}
+          autoFocus
         />
         <div> 
-        <button className="btn">Add</button>
+        <button className="btn">
+          {query.id ? "Update" : "Add"}
+        </button>
         </div>
       </form>
     </div>

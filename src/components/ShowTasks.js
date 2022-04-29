@@ -2,22 +2,27 @@ import {useTasks} from '../context/taskContext';
 import {useRouter} from 'next/router';
 
 const ShowTasks = () => {
-    const {tasks} = useTasks();
+    const {tasks, deleteTask} = useTasks();
     const {push} = useRouter();
 
     return(
-        <div className="tasks">
+        <div>
             {
                 tasks.length === 0 ? (
-                <h2>There are no tasks</h2>
+                <div> 
+                    <h2>There are no tasks</h2>
+                </div>
                 ) : (
                 <div>
                     {tasks.map((task) => (
                     <div key={task.id} onClick={()=>push("/edit/" + task.id)}>
-                        <span>{task.id}</span>
-                        <div>
-                            <h5>{task.description}</h5>
-                            <button>X</button>
+                        <div><h1>{task.id}</h1></div>
+                        <div><h5>{task.description}</h5></div>
+                        <div> 
+                            <button className="btn" onClick={(e)=>{
+                                e.stopPropagation();
+                                deleteTask(task.id);
+                                }}>Delete</button>
                         </div>
                     </div>
                     ))}
