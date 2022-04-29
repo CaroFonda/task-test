@@ -1,0 +1,62 @@
+html,
+body {
+  font-family: poppins, sans-serif;
+}
+
+right{
+  display: flex;
+  margin-right: auto;
+}
+
+.container {
+  margin: 50px auto;
+  width: 800px;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: rgb(255, 166, 0);
+  text-align: right;
+  align-items: right;
+}
+
+
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:30px;
+  width:90px;
+  background-color: darkslategray;
+  border-color: #737373;
+  color: rgb(255, 166, 0);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+form-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:30px;
+  width:90px;
+  background-color: rgb(255, 166, 0);
+  border-color: rgb(255, 166, 0);
+  color: rgb(255, 166, 0);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
