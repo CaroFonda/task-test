@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import { useTasks } from "../context/taskContext";
 import { useRouter } from "next/router";
 
+
 const inititalState = {
   title: "",
   description: "",
@@ -51,6 +52,7 @@ const TaskFormPage = () => {
             name="title"
             onChange={handleChange}
             value={task.title}
+            className="form-control"
           />
           {/* <textarea
             cols="2"

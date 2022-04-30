@@ -12,24 +12,24 @@ const Container = ({ children }) => {
       <header>
         <Link href="/">
           <a>
-            <h1>Task App</h1>
+            <h1>Todo List</h1>
           </a>
         </Link>
 
         <span>
           {tasks.length} tasks
         </span>
+      </header>
 
-        <div>
+      <div className="addbtn">
           <button
-            
+            className="btn"
             onClick={() => router.push("/new")}
           >
             <AiOutlinePlus className="mr-2" />
-            Add Task
+            Add
           </button>
         </div>
-      </header>
 
       <main>{children}</main>
     </div>
