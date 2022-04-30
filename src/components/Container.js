@@ -8,11 +8,11 @@ const Container = ({ children }) => {
   const { tasks } = useTasks();
 
   return (
-    <div className="container">
+    <div>
       <header>
         <Link href="/">
           <a>
-            <h1>Todo List</h1>
+            <h1>TODO LIST</h1>
           </a>
         </Link>
 
@@ -21,6 +21,7 @@ const Container = ({ children }) => {
         </span>
       </header>
 
+    <div className="container">
       <div className="addbtn">
           <button
             className="btn"
@@ -32,6 +33,7 @@ const Container = ({ children }) => {
         </div>
 
       <main>{children}</main>
+    </div>
     </div>
   );
 };
