@@ -2,10 +2,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTasks } from "../context/taskContext";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useAuth } from "../context/authContext";
 
 const Container = ({ children }) => {
   const router = useRouter();
   const { tasks } = useTasks();
+  const { signup } = useAuth();
+  
 
   return (
     <div>
