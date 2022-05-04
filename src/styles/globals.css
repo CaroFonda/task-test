@@ -23,6 +23,7 @@ span {
 header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: white;
   background-color: rgb(96, 91, 91);
   padding: 10px 0;

@@ -3,28 +3,30 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "@firebase/auth";
 import { auth } from "../firebase";
 
 const authContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password) =>
     createUserWithEmailAndPassword(auth, email, password);
   const signin = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
+  const signout = () => signOut(auth);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
-      setUser("currentUser", currentUser);
+      setUser(currentUser);
     });
   }, []);
 
   return (
-    <authContext.Provider value={{ signup, signin, user }}>
+    <authContext.Provider value={{ signup, signin, user, signout }}>
       {children}
     </authContext.Provider>
   );

@@ -6,10 +6,11 @@ import { VscTrash, VscTasklist } from "react-icons/vsc";
 
 function Home() {
   const { tasks, deleteTask } = useTasks();
+
   const router = useRouter();
 
   return (
-    <Container>
+    <Container> 
       <div>
         {tasks.length === 0 ? (
           <div >
