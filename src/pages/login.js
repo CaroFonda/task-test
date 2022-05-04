@@ -3,9 +3,9 @@ import Container from "../components/Container";
 import { useAuth } from "../context/authContext";
 import { useRouter } from "next/router";
 
-const registerPage = () => {
+const logInPage = () => {
   const router = useRouter();
-  const { signup } = useAuth();
+  const { signin } = useAuth();
 
   const [user, setUser] = useState({
     email: "",
@@ -22,7 +22,7 @@ const registerPage = () => {
     e.preventDefault();
     setError("");
     try {
-      await signup(user.email, user.password);
+      await signin(user.email, user.password);
       router.push("/");
     } catch (error) {
       setError(error.message);
@@ -54,7 +54,7 @@ const registerPage = () => {
           <br />
           <br />
           <button type="submit" className="btn">
-            Register
+            Log In
           </button>
         </form>
       </div>
@@ -62,4 +62,4 @@ const registerPage = () => {
   );
 };
 
-export default registerPage;
+export default logInPage;
